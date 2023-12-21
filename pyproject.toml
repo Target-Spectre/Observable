@@ -1,17 +1,19 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
 
 [project]
-name = "Target Spectre"
+name = "TSO"
 version = "1.0.0"
 dependencies = [
   "",
 ]
+
 requires-python = ">=3.11"
 authors = [
   {name = "Kent Madsen", email = "kent.vejrup.madsen@designermadsen.dk"},
 ]
+
 description = ""
 readme = "Readme.md"
 license = {file = "License.md"}
@@ -20,3 +22,7 @@ classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python"
 ]
+
+[project.urls]
+Homepage = "https://github.com/Target-Spectre/Observable"
+Issues = "https://github.com/Target-Spectre/Observable/issues"
