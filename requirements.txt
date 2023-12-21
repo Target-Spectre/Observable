@@ -1,3 +1,6 @@
+pytest
+wheel
+
 numpy
 pillow
 
