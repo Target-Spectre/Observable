@@ -1,2 +1,2 @@
-from observers.observer \
+from observable.observers.observer \
     import Observer

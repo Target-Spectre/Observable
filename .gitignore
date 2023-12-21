@@ -10,4 +10,8 @@ build/*
 *.egg-info/*
 
 *.pyc
+
+*.txt
+!requirements.txt
+
 __pycache__/*

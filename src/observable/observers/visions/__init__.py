@@ -1,3 +1,3 @@
-from observers.visions.vision \
+from observable.observers.visions.vision \
     import Vision
 

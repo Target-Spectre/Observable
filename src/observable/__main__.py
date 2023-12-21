@@ -1,4 +1,4 @@
-from framework \
+from observable.framework \
     import ApplicationFramework
 
 

@@ -1,15 +1,11 @@
+from observable.observers.visions.streams.streamable \
+    import Streamable
+
 from cv2 \
-    import (
-        VideoCapture,
-        cvtColor,
-        COLOR_BGR2RGB
-)
+    import (VideoCapture)
 
 from PIL \
     import Image
-
-from observers.visions.streams \
-    import Streamable
 
 
 class VideoStream(
@@ -54,12 +50,12 @@ class VideoStream(
 
     def get_device(
         self
-    ) -> str:
+    ) -> str | int:
         return self.device
 
     def set_device(
         self,
-        value: str
+        value: str | int
     ) -> None:
         self.capture = value
 
@@ -67,6 +63,20 @@ class VideoStream(
         self
     ):
         pass
+
+    def skip(
+        self
+    ):
+        if self.is_done():
+            self.call_finish_event()
+
+        if self.is_capture_available():
+            returnable, frame = self.get_capture().read()
+
+            if not returnable:
+                self.flag_is_done()
+
+        return None
 
     def fetch(
         self
@@ -78,19 +88,20 @@ class VideoStream(
             returnable, frame = self.get_capture().read()
 
             if returnable:
-                frame = cvtColor(
-                    frame,
-                    COLOR_BGR2RGB
+                frame = self.get_order().pipeline(
+                    frame
+                )
+                
+                frame = Image.fromarray(
+                    frame
                 )
             else:
                 self.flag_is_done()
 
-            return Image.fromarray(
-                frame
-            )
+            return frame
         return None
 
     def cleanup(
         self
     ):
-        self.capture.release()
+        self.get_capture().release()

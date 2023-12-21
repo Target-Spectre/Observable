@@ -1,4 +1,4 @@
-from observers.visions.streams \
+from observable.observers.visions.streams.streamable \
     import Streamable
 
 

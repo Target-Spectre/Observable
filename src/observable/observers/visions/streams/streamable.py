@@ -4,6 +4,9 @@ from abc \
         abstractmethod
 )
 
+from observable.observers.visions.streams.streamorder \
+    import StreamOrder
+
 
 class Streamable(
     ABC
@@ -13,11 +16,23 @@ class Streamable(
     ):
         self.done: bool = False
         self.build()
+        self.order: StreamOrder = StreamOrder()
 
     def __del__(
         self
     ):
         self.cleanup()
+
+    def get_order(
+        self
+    ) -> StreamOrder:
+        return self.order
+
+    def set_order(
+        self,
+        value: StreamOrder
+    ) -> None:
+        self.order = value
 
     def is_done(
         self
@@ -49,6 +64,12 @@ class Streamable(
     def fetch(
         self
     ):
+        raise NotImplemented(
+            "Please implement me in class"
+        )
+
+    @abstractmethod
+    def skip(self):
         raise NotImplemented(
             "Please implement me in class"
         )

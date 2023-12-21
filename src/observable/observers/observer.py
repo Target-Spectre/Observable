@@ -1,4 +1,4 @@
-from observers.visions \
+from observable.observers.visions \
     import Vision
 
 
