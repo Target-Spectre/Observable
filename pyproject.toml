@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "Target Spectre"
+version = "1.0.0"
+dependencies = [
+  "",
+]
+requires-python = ">=3.11"
+authors = [
+  {name = "Kent Madsen", email = "kent.vejrup.madsen@designermadsen.dk"},
+]
+description = ""
+readme = "Readme.md"
+license = {file = "License.md"}
+keywords = []
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python"
+]

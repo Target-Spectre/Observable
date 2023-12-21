@@ -30,6 +30,13 @@ class Streamable(
     ) -> None:
         self.done = value
 
+    def flag_is_done(
+        self
+    ) -> None:
+        self.set_done(
+            True
+        )
+
     @abstractmethod
     def build(
         self
@@ -54,7 +61,7 @@ class Streamable(
             "Please implement me in class"
         )
 
-    def finish(
+    def call_finish_event(
         self
     ) -> None:
         raise IOError(

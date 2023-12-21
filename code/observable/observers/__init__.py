@@ -1,2 +1,0 @@
-from observers \
-    import Observer

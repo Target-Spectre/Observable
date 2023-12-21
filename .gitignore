@@ -1,6 +1,7 @@
 .idea/*
-
+.windows/*
 .venv/*
+
 .environment/*
 .configuration/*
 
