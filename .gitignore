@@ -3,3 +3,4 @@
 .configuration/*
 
 *.pyc
+__pycache__/*

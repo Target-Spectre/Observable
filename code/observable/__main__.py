@@ -1,5 +1,14 @@
+from framework \
+    import ApplicationFramework
+
+
 def main():
-    pass
+    framework = ApplicationFramework()
+
+    framework.initialise()
+    framework.execution()
+    framework.garbage_collection()
+
 
 
 entry_point: str = '__main__'
