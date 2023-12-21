@@ -10,7 +10,6 @@ def main():
     framework.garbage_collection()
 
 
-
 entry_point: str = '__main__'
 
 if __name__ == entry_point:

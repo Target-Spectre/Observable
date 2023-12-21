@@ -1,24 +1,50 @@
-from vision \
-    import Vision
+from observers \
+    import Observer
 
 
-class ApplicationFramework: 
+class ApplicationFramework:
     def __init__(
         self
     ) -> None:
-        self.vision = Vision()
+        self.observer = None
 
     def __del__(
         self
     ) -> None:
         pass
     
-    def initialise() -> None:
+    def initialise(
+        self
+    ) -> None:
         pass
 
-    def execution() -> None:
+    def execution(
+        self
+    ) -> None:
         pass
 
-    def garbage_collection() -> None:
+    def garbage_collection(
+        self
+    ) -> None:
         pass
 
+    def is_observer_empty(
+        self
+    ) -> bool:
+        return self.observer is None
+
+    def get_observer(
+        self
+    ) -> Observer:
+        if self.is_observer_empty():
+            self.set_observer(
+                Observer()
+            )
+
+        return self.observer
+
+    def set_observer(
+        self,
+        object: Observer
+    ) -> None:
+        self.observer = object
