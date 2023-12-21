@@ -1,8 +1,13 @@
 .idea/*
-
+.windows/*
 .venv/*
+dist/*
+build/*
+
 .environment/*
 .configuration/*
+
+*.egg-info/*
 
 *.pyc
 __pycache__/*

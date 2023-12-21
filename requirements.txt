@@ -1,7 +1,5 @@
 pytest
 wheel
-
 numpy
 pillow
-
 opencv-python
