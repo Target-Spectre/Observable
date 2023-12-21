@@ -1,6 +1,6 @@
 
 
-class Vision:
+class VisionStream:
     def __init__(
         self
     ) -> None:
