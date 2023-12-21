@@ -7,5 +7,7 @@ build/*
 .environment/*
 .configuration/*
 
+*.egg-info/*
+
 *.pyc
 __pycache__/*
