@@ -1,0 +1,1 @@
+device_path_to_file: str = 'E:\\Gambithollow\\videos\\games\\Counter-Strike\\GO\\Counter-strike  Global Offensive 2023.05.11 - 19.08.24.01.mp4'

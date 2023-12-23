@@ -1,17 +1,22 @@
 from observable.observers.visions.streams.videostream \
     import VideoStream
 
+from tests.static_paths \
+    import device_path_to_file
+
 from os import path
 
+import tempfile
+
+location_to_save_frame: str = tempfile.mkdtemp()
+print(location_to_save_frame)
 
 def test_videostream():
-    device_path_to_file: str = 'E:\\Gambithollow\\videos\\games\\Counter-Strike\\GO\\Artifacts\\Counter-strike  Global Offensive 2023.09.24 - 02.12.13.13.mp4'
-
+    global location_to_save_frame
     stream = VideoStream(
         device=device_path_to_file
     )
 
-    location_to_save_frame: str = 'D:\\Outputs'
     counter: int = 0
 
     while stream.is_capture_available():

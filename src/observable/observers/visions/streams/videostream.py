@@ -80,7 +80,7 @@ class VideoStream(
 
     def fetch(
         self
-    ):
+    ) -> None | Image.Image:
         if self.is_done():
             self.call_finish_event()
 
