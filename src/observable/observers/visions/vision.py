@@ -7,6 +7,12 @@ from observable.observers.visions.visionModel \
 from observable.observers.visions.subscriber \
     import VisionSubscriber
 
+from observable.observers.visions.subscribers.keras_subscriber \
+    import KerasSubscriber
+
+from observable.locations \
+    import get_location_to_tensorflow_model
+
 
 class Vision:
     def __init__(
@@ -18,6 +24,16 @@ class Vision:
         self.model: VisionModel | None = model
 
         self.subscribers: list[VisionSubscriber] = []
+        self.default()
+
+    def default(
+        self
+    ) -> None:
+        self.get_subscribers().append(
+            KerasSubscriber(
+                get_location_to_tensorflow_model()
+            )
+        )
 
     def update(
         self
