@@ -4,21 +4,19 @@ from abc \
         ABC
     )
 
-from PIL.Image \
-    import Image
-
 
 class VisionSubscriber(
     ABC
 ):
-    def __init__(self):
-        pass
+    def __init__(
+        self
+    ):
+        super().__init__()
 
     @abstractmethod
     def subscribe(
         self,
-        frame: Image,
-        objects: list
+        results: list[dict]
     ) -> None:
         raise NotImplemented(
             'Subscribe method is not implemented.'

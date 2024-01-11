@@ -1,21 +1,15 @@
-from PIL.Image \
-    import Image
-
 from observable.observers.visions.subscriber \
     import VisionSubscriber
 
 
-class OpenVineSubscriber(
+class TargetingSubscriber(
     VisionSubscriber
 ):
-    def __init__(
-        self
-    ):
+    def __init__(self):
         super().__init__()
 
     def subscribe(
         self,
-        frame: Image,
-        objects: list
+        results: list[dict]
     ) -> None:
         pass
